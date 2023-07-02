@@ -1,0 +1,56 @@
+class Solution {
+public:
+    bool help(string &s)
+    {
+        if((s[0]=='a'||s[0]=='e'||s[0]=='i'||s[0]=='o'||s[0]=='u') && (s.back()=='a'||s.back()=='e'||s.back()=='i'||s.back()=='o'||s.back()=='u'))
+            return true;
+        return false;
+    }
+    int vowelStrings(vector<string>& words, int left, int right) {
+        int count=0;
+        for(int i=left;i<=right;i++)
+        {
+            string s=words[i];
+            if(help(s))
+                count++;
+        }
+        return count;
+    }
+};
+
+
+  // bool cmp(int a,int b)
+  //   {
+  //       return a<b;
+  //   }
+
+
+6316
+
+class Solution {
+public:
+ 
+    int maxScore(vector<int>& nums) {
+        vector<int> temp=nums;
+        sort(temp.begin(),temp.end(),greater<int>());
+        // reverse(temp.begin(),temp.end());
+        
+        int maxScore=0;
+        long long int x=0;
+        for(int i=0;i<temp.size();i++)
+        {
+            x+=temp[i];
+            if(x>0)
+            {
+                maxScore++;
+            }else
+                break;
+        }
+        return maxScore;
+    }
+};
+
+
+
+
+
